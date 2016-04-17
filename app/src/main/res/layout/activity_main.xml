@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.carlosclaro.calculadora_final.MainActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/Labels">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Historico"
+            android:height="60dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Resultado"
+            android:height="60dp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentEnd="false"
+        android:layout_marginTop="120dp"
+        android:orientation="horizontal"
+        android:id="@+id/Linha1">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:id="@+id/_1"
+            android:onClick="CarregaNumero" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:id="@+id/_2"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/_1"
+            android:onClick="CarregaNumero" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3"
+            android:id="@+id/_3"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/_2" android:onClick="CarregaNumero" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:id="@+id/somar"
+            android:onClick="CarregaSimbolo"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/_3" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4"
+            android:id="@+id/_4"
+            android:layout_below="@+id/_1"
+            android:layout_alignParentStart="true"
+            android:onClick="CarregaNumero" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5"
+            android:id="@+id/_5"
+            android:layout_below="@+id/_2"
+            android:layout_toStartOf="@+id/_6"
+            android:onClick="CarregaNumero" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6"
+            android:id="@+id/_6"
+            android:layout_below="@+id/_2"
+            android:layout_toEndOf="@+id/_2"
+            android:onClick="CarregaNumero" />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:id="@+id/subtrair"
+            android:layout_below="@+id/_3"
+            android:layout_toEndOf="@+id/_3"
+            android:onClick="CarregaSimbolo"
+            android:nestedScrollingEnabled="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7"
+            android:id="@+id/_7"
+            android:layout_below="@+id/_4"
+            android:layout_alignParentStart="true"
+            android:onClick="CarregaNumero" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8"
+            android:id="@+id/_8"
+            android:layout_below="@+id/_5"
+            android:layout_toStartOf="@+id/_6"
+            android:onClick="CarregaNumero" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9"
+            android:id="@+id/_9"
+            android:layout_below="@+id/_5"
+            android:layout_toEndOf="@+id/_5"
+            android:onClick="CarregaNumero" />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*"
+            android:id="@+id/multiplicar"
+            android:onClick="CarregaSimbolo"
+            android:layout_below="@+id/_6"
+            android:layout_toEndOf="@+id/_6" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="C"
+            android:id="@+id/reseta"
+            android:layout_below="@+id/_7"
+            android:layout_alignParentStart="true"
+            android:onClick="Resetar" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:id="@+id/_0"
+            android:layout_below="@+id/_7"
+            android:layout_toEndOf="@+id/_7"
+            android:onClick="CarregaNumero" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:id="@+id/igual"
+            android:layout_below="@+id/_8"
+            android:layout_toEndOf="@+id/_8"
+            android:onClick="CarregaSimbolo" />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:id="@+id/dividir"
+            android:onClick="CarregaSimbolo"
+            android:layout_below="@+id/_9"
+            android:layout_toEndOf="@+id/_9" />
+
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
