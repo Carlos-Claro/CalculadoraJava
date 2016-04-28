@@ -67,9 +67,9 @@ public class MainActivity extends Activity {
 
     private double setCalculo( )
     {
-        System.out.println(resultadoParcial);
-        System.out.println(ultimaAcao);
-        System.out.println(numeroAnterior);
+        System.out.println("Parcial " + resultadoParcial);
+        System.out.println("Ultima Açao " + ultimaAcao);
+        System.out.println("Anterior " + numeroAnterior);
         double valor = 0;
         switch( ultimaAcao ) {
             case "+":
@@ -93,54 +93,45 @@ public class MainActivity extends Activity {
     public void CarregaSimbolo(View view) {
         Button botao = (Button)view;
         String acao = botao.getText().toString();
-
-        System.out.println(acao);
-
+        System.out.println("acao " + acao);
         String valorHistorico = historico.getText().toString();
         String valorResultado = resultado.getText().toString();
-
-        if ( numeroParcial != "" )
+        numeroAnterior = Double.parseDouble(numeroParcial);
+        numeroParcial = "";
+        historico.setText( valorHistorico + acao );
+        if ( ultimaAcao == "" )
         {
-
-            numeroAnterior = Double.parseDouble(numeroParcial);
+            ultimaAcao = acao;
+            resultadoParcial = numeroAnterior;
+        }
+        else
+        {
+            double valor;
+            valor = setCalculo();
+            String tot = new Double(valor).toString();
+            resultado.setText( tot );
+            resultadoParcial = valor;
             numeroParcial = "";
-            historico.setText( valorHistorico + acao );
-            if ( ultimaAcao == "" )
+            if ( acao == "=")
             {
-                ultimaAcao = acao;
+                ultimaAcao = "";
             }
             else
             {
-                double valor;
-                valor = setCalculo();
-                String tot = new Double(valor).toString();
-                resultado.setText( tot );
-                resultadoParcial = valor;
-                numeroParcial = "";
-                if ( acao == "=")
-                {
-                    ultimaAcao = "";
-                }
-                else
-                {
-                    ultimaAcao = acao;
-                }
-
+                ultimaAcao = acao;
             }
-
         }
-
     }
 
 
     public void CarregaNumero(View view) {
         Button botao = (Button)view;
-        System.out.println(numeroParcial);
+        System.out.println("Numero parcial A " + numeroParcial);
         String valorHistorico = historico.getText().toString();
         String valorResultado = resultado.getText().toString();
         String numero = botao.getText().toString();
         numeroParcial = numeroParcial + numero;
-        System.out.println(numeroParcial);
+        System.out.println("Numero Parcia B " + numeroParcial);
         historico.setText( valorHistorico + numero );
     }
 
